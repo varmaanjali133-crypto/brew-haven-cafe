@@ -23,7 +23,7 @@ Brew Haven is a modern café website built using HTML, CSS, and JavaScript.
 
 ## Live Demo
 
-Add your GitHub Pages link here after deployment.
+https://varmaanjali133-crypto.github.io/brew-haven-cafe/
 
 ## Author
 
