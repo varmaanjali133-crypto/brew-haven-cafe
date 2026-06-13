@@ -1,2 +1,30 @@
-# brew-haven-cafe
-A modern café website built with HTML, CSS and JavaScript featuring responsive design, interactive menu search, wishlist, cart functionality and modern UI/UX.
+# ☕ Brew Haven
+
+Brew Haven is a modern café website built using HTML, CSS, and JavaScript.
+
+## Features
+
+* Responsive Design
+* Interactive Menu Search
+* Category Filters
+* Wishlist System
+* Shopping Cart Functionality
+* Quick View Modal
+* About Page
+* Gallery Page
+* Contact Page
+* Modern UI/UX Design
+
+## Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Live Demo
+
+Add your GitHub Pages link here after deployment.
+
+## Author
+
+Created as part of my frontend development learning journey.
