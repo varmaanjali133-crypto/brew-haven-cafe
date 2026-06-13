@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <header class="nav">
+
+    <div class="logo">
+      Brew Haven
+    </div>
+
+    <nav id="navMenu">
+
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <div class="nav-right">
+
+      <div class="cart-btn" onclick="toggleCart()">
+
+        🛒 <span id="cartCount">0</span>
+
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+  </header>
+  <section class="gallery-hero">
+
+    <div class="gallery-overlay">
+
+      <h1>Our Gallery</h1>
+
+      <p>
+        Discover the atmosphere, flavors, and moments
+        that make Brew Haven special.
+      </p>
+
+      <p class="gallery-count">
+        120+ Moments Captured
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="gallery-filters">
+
+    <button class="filter-btn active" data-filter="all">All</button>
+
+    <button class="filter-btn" data-filter="coffee">Coffee</button>
+
+    <button class="filter-btn" data-filter="interior">Interior</button>
+
+    <button class="filter-btn" data-filter="dessert">Desserts</button>
+
+    <button class="filter-btn" data-filter="event">Events</button>
+
+  </section>
+
+  <section class="gallery-grid">
+
+    <!-- COFFEE -->
+
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" class="gallery-item coffee">
+
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" class="gallery-item coffee">
+
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="gallery-item coffee">
+
+    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735" class="gallery-item coffee">
+
+
+    <!-- INTERIOR -->
+
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24" class="gallery-item interior">
+
+    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814" class="gallery-item interior">
+
+    <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247" class="gallery-item interior">
+
+    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a" class="gallery-item interior">
+
+
+    <!-- DESSERTS -->
+
+    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad" class="gallery-item dessert">
+
+    <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0" class="gallery-item dessert">
+
+    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e" class="gallery-item dessert">
+
+    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" class="gallery-item dessert">
+
+
+    <!-- EVENTS -->
+
+    <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205" class="gallery-item event">
+
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" class="gallery-item event">
+
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" class="gallery-item event">
+
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" class="gallery-item event">
+
+  </section>
+
+  <div class="lightbox" id="lightbox">
+
+    <span id="closeLightbox">
+      ✖
+    </span>
+
+    <img id="lightboxImg">
+
+  </div>
+
+  <section class="instagram-section">
+
+    <h2>Moments at Brew Haven</h2>
+
+    <p>
+      From handcrafted coffees to memorable gatherings.
+    </p>
+
+    <div class="insta-grid">
+
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24">
+
+      <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad">
+
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+    </div>
+
+  </section>
+  <section class="gallery-cta">
+
+    <h2>
+      Experience Brew Haven In Person
+    </h2>
+
+    <a href="contact.html">
+      Book A Visit
+    </a>
+
+  </section>
+
+  <script src="script.js"></script>
+  <button id="topBtn">
+
+    <i class="fas fa-arrow-up"></i>
+
+  </button>
+  <div id="cartDrawer" class="cart-drawer">
+
+    <div class="cart-header">
+
+      <h3>Your Order</h3>
+
+      <button class="close-cart" onclick="toggleCart()">
+        &times;
+      </button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <h4>Total: ₹<span id="total">0</span></h4>
+
+    <button class="checkout-btn" onclick="checkout()">
+      Checkout
+    </button>
+
+  </div>
+
+  <div id="cartOverlay" onclick="toggleCart()"></div>
+
+</body>
+
+</html>

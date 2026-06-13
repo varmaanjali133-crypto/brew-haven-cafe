@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu | Brew Haven</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <header class="nav">
+
+    <div class="logo">
+      Brew Haven
+    </div>
+
+    <nav id="navMenu">
+
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <div class="nav-right">
+
+      <div class="cart-btn" onclick="toggleCart()">
+
+        🛒 <span id="cartCount">0</span>
+
+      </div>
+
+      <div class="wishlist-nav" onclick="toggleWishlist()">
+
+        ❤️
+
+        <span id="wishlistCount">
+
+          0
+
+        </span>
+
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <section class="menu">
+
+    <section class="menu-hero">
+
+      <h1>Signature Menu</h1>
+
+      <p>
+        Freshly brewed coffee, handcrafted desserts
+        and unforgettable flavors.
+      </p>
+
+    </section>
+
+    <section class="why-us">
+
+      <div class="why-card">
+
+        <div class="why-icon">☕</div>
+
+        <h3>Freshly Roasted Beans</h3>
+
+        <p>
+          Carefully sourced and roasted for a rich,
+          unforgettable flavor.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <div class="why-icon">👨‍🍳</div>
+
+        <h3>Expert Baristas</h3>
+
+        <p>
+          Every cup crafted with precision,
+          passion and consistency.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <div class="why-icon">🌿</div>
+
+        <h3>Organic Ingredients</h3>
+
+        <p>
+          Premium ingredients selected
+          for quality and freshness.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <div class="why-icon">⚡</div>
+
+        <h3>Fast Service</h3>
+
+        <p>
+          Fresh drinks and food served
+          quickly without compromise.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="category-showcase">
+
+      <div class="category-box">
+
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+
+        <div class="category-content">
+
+          <h3>☕ Coffee</h3>
+
+          <p>15 Signature Drinks</p>
+
+        </div>
+
+      </div>
+
+      <div class="category-box">
+
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735">
+
+        <div class="category-content">
+
+          <h3>🥤 Cold Drinks</h3>
+
+          <p>10 Refreshing Beverages</p>
+
+        </div>
+
+      </div>
+
+      <div class="category-box">
+
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+
+        <div class="category-content">
+
+          <h3>🍰 Desserts</h3>
+
+          <p>12 Sweet Treats</p>
+
+        </div>
+
+      </div>
+
+      <div class="category-box">
+
+        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8">
+
+        <div class="category-content">
+
+          <h3>🍳 Breakfast</h3>
+
+          <p>8 Fresh Meals</p>
+
+        </div>
+
+      </div>
+
+    </section>
+    <div class="menu-controls">
+      <div class="menu-search">
+
+        <span class="search-icon">
+          🔍
+        </span>
+
+        <input type="text" id="menuSearch" placeholder="Search espresso, desserts, breakfast...">
+
+      </div>
+
+      <p id="searchResultText"></p>
+
+      <section class="menu-categories">
+
+        <button class="menu-tab active" data-filter="all">
+          All
+        </button>
+
+        <button class="menu-tab" data-filter="coffee">
+          Coffee
+        </button>
+
+        <button class="menu-tab" data-filter="cold">
+          Cold Drinks
+        </button>
+
+        <button class="menu-tab" data-filter="dessert">
+          Desserts
+        </button>
+
+        <button class="menu-tab" data-filter="breakfast">
+          Breakfast
+        </button>
+
+      </section>
+
+      <div class="sort-wrapper">
+
+        <select id="sortMenu">
+
+          <option value="">
+            Sort By
+          </option>
+
+          <option value="low">
+            Price: Low to High
+          </option>
+
+          <option value="high">
+            Price: High to Low
+          </option>
+
+        </select>
+
+      </div>
+
+      <section class="featured-drink">
+
+        <div class="featured-drink-content">
+
+          <span class="featured-label">
+
+            ⭐ BARISTA'S PICK
+
+          </span>
+
+          <h2>
+
+            Caramel Latte
+
+          </h2>
+
+          <p>
+
+            Rich espresso blended with silky milk and
+            handcrafted caramel sauce. Loved by our guests.
+
+          </p>
+
+          <button onclick="addItem('Caramel Latte',220,this)">
+
+            Order Now
+
+          </button>
+
+        </div>
+
+        <div class="featured-drink-image">
+
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Caramel Latte">
+
+        </div>
+
+      </section>
+
+
+      <div class="grid" id="menuGrid">
+
+        <div class="menu-card" data-category="coffee">
+          <div class="wishlist-btn">
+            ♡
+          </div>
+
+          <span class="badge">Bestseller</span>
+
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+
+          <h3>Espresso</h3>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 5 min</span>
+
+          </div>
+
+          <p>Rich concentrated coffee shot with bold flavor.</p>
+
+          <div class="price-row">
+            <span>₹120</span>
+            <button onclick="addItem('Espresso',120,this)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+
+        <div class="menu-card" data-category="coffee">
+          <div class="wishlist-btn">
+            ♡
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+
+          <h3>Cappuccino</h3>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 6 min</span>
+
+          </div>
+
+          <p>
+            Perfect balance of espresso and silky foam.
+          </p>
+
+
+          <div class="price-row">
+            <span>₹150</span>
+            <button onclick="addItem('Cappuccino',150,this)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+
+        <div class="menu-card" data-category="coffee">
+          <div class="wishlist-btn">
+            ♡
+          </div>
+          <span class="badge">Popular</span>
+
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+
+          <h3>Latte</h3>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 5 min</span>
+
+          </div>
+
+          <p>
+            Creamy milk blended with smooth espresso.
+          </p>
+
+          <div class="price-row">
+            <span>₹180</span>
+            <button onclick="addItem('Latte',180,this)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+
+        <div class="menu-card" data-category="cold">
+          <div class="wishlist-btn">
+            ♡
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735">
+
+          <h3>Cold Brew</h3>
+
+          <div class="meta-info">
+
+            <span>★★★★☆</span>
+
+            <span>⏱ 4 min</span>
+
+          </div>
+
+          <p>
+            Slow-steeped coffee served chilled and refreshing.
+          </p>
+
+          <div class="price-row">
+
+            <span>₹170</span>
+            <button onclick="addItem('Cold Brew',170,this)">
+              Add To Cart
+            </button>
+
+          </div>
+        </div>
+        <div class="menu-card" data-category="coffee">
+
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+
+          <h3>Hazelnut Latte</h3>
+
+          <p>Espresso blended with creamy milk and hazelnut syrup.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 6 min</span>
+            <span>220 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹240</span>
+
+            <button onclick="addItem('Hazelnut Latte',240,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="breakfast">
+
+          <span class="badge">Healthy</span>
+
+          <button class="wishlist-btn">♡</button>
+
+          <img src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d">
+
+          <h3>Avocado Toast</h3>
+
+          <p>Fresh avocado spread on artisan toasted bread.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 6 min</span>
+
+            <span>280 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹260</span>
+
+            <button onclick="addItem('Avocado Toast',260,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="breakfast">
+
+          <span class="badge">Popular</span>
+
+          <button class="wishlist-btn">♡</button>
+
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93">
+
+          <h3>Pancake Stack</h3>
+
+          <p>Fluffy pancakes served with maple syrup.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 8 min</span>
+
+            <span>420 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹290</span>
+
+            <button onclick="addItem('Pancake Stack',290,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="breakfast">
+
+          <button class="wishlist-btn">♡</button>
+
+          <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929">
+
+          <h3>French Toast</h3>
+
+          <p>Golden toast dusted with sugar and cinnamon.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 7 min</span>
+
+            <span>360 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹240</span>
+
+            <button onclick="addItem('French Toast',240,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="breakfast">
+
+          <span class="badge">Protein Rich</span>
+
+          <button class="wishlist-btn">♡</button>
+
+          <img src="https://images.unsplash.com/photo-1510693206972-df098062cb71">
+
+          <h3>Cheese Omelette</h3>
+
+          <p>Three-egg omelette filled with melted cheese.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 6 min</span>
+
+            <span>310 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹220</span>
+
+            <button onclick="addItem('Cheese Omelette',220,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="breakfast">
+
+          <span class="badge">Customer Favorite</span>
+
+          <button class="wishlist-btn">♡</button>
+
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af">
+
+          <h3>Classic Sandwich</h3>
+
+          <p>Fresh vegetables, cheese and signature sauce.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 5 min</span>
+
+            <span>330 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹210</span>
+
+            <button onclick="addItem('Classic Sandwich',210,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="menu-card" data-category="cold">
+
+          <div class="wishlist-btn">
+            ♡
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c">
+
+          <h3>Mocha</h3>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 6 min</span>
+
+          </div>
+
+          <p>
+            Chocolate infused coffee experience.
+          </p>
+
+          <div class="price-row">
+            <span>₹200</span>
+            <button onclick="addItem('Mocha',200,this)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+        <div class="menu-card" data-category="coffee">
+
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735">
+
+          <h3>Vanilla Latte</h3>
+
+          <p>Sweet vanilla notes balanced with premium espresso.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>5 min</span>
+            <span>210 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹230</span>
+
+            <button onclick="addItem('Vanilla Latte',230,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card" data-category="dessert">
+          <div class="wishlist-btn">
+            ♡
+          </div>
+          <span class="badge">Chef's Choice</span>
+
+          <img src="https://images.unsplash.com/photo-1579888944880-d98341245702">
+
+          <h3>Caramel Latte</h3>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 5 min</span>
+
+          </div>
+
+          <p>
+            Espresso with rich caramel sweetness.
+          </p>
+
+          <div class="price-row">
+            <span>₹220</span>
+            <button onclick="addItem('Caramel Latte',220,this)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+        <div class="menu-card" data-category="coffee">
+
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c">
+
+          <h3>Macchiato</h3>
+
+          <p>Strong espresso topped with a delicate layer of foam.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>4 min</span>
+            <span>60 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹170</span>
+
+            <button onclick="addItem('Macchiato',170,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="coffee">
+
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+
+          <h3>Americano</h3>
+
+          <p>Bold espresso diluted with hot water for a smooth finish.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>4 min</span>
+            <span>15 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹140</span>
+
+            <button onclick="addItem('Americano',140,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="cold">
+
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c">
+
+          <h3>Iced Latte</h3>
+
+          <p>Chilled espresso blended with creamy milk over ice.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>3 min</span>
+            <span>160 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹210</span>
+
+            <button onclick="addItem('Iced Latte',210,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="cold">
+
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+
+          <h3>Iced Mocha</h3>
+
+          <p>Chocolate-infused espresso served chilled and refreshing.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>4 min</span>
+            <span>260 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹240</span>
+
+            <button onclick="addItem('Iced Mocha',240,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="cold">
+
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+
+          <h3>Coffee Frappé</h3>
+
+          <p>Blended coffee drink topped with whipped cream.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>5 min</span>
+            <span>320 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹260</span>
+
+            <button onclick="addItem('Coffee Frappé',260,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="cold">
+
+          <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=800">
+
+          <h3>Strawberry Smoothie</h3>
+
+          <p>Fresh strawberries blended into a creamy smoothie.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>4 min</span>
+            <span>280 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹230</span>
+
+            <button onclick="addItem('Strawberry Smoothie',230,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="cold">
+
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699">
+
+          <h3>Chocolate Shake</h3>
+
+          <p>Rich chocolate blended with creamy milk and ice cream.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>4 min</span>
+            <span>350 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹250</span>
+
+            <button onclick="addItem('Chocolate Shake',250,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="dessert">
+
+          <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9">
+
+          <h3>Tiramisu</h3>
+
+          <p>Classic Italian dessert layered with coffee-soaked sponge.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>Ready Now</span>
+            <span>340 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹280</span>
+            <button class="quick-view-btn" onclick="openQuickView(
+'Tiramisu',
+'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800',
+'Classic Italian dessert layered with coffee-soaked sponge.',
+280
+)">
+
+              Quick View
+
+            </button>
+
+            <button onclick="addItem('Tiramisu',280,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="dessert">
+
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+
+          <h3>Chocolate Muffin</h3>
+
+          <p>Soft baked muffin loaded with rich chocolate chips.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>Ready Now</span>
+            <span>290 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹170</span>
+
+            <button class="quick-view-btn" onclick="openQuickView(
+                     'Chocolate Muffin',
+                     'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800',
+                       'Soft baked muffin loaded with rich chocolate chips.',
+                                170
+                                )">
+
+              Quick View
+
+            </button>
+
+            <button onclick="addItem('Chocolate Muffin',170,this)">
+
+              Add To Cart
+
+            </button>
+
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="dessert">
+
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800">
+
+          <h3>Red Velvet Cake</h3>
+
+          <p>Moist red velvet sponge topped with cream cheese frosting.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>Ready Now</span>
+            <span>410 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹260</span>
+
+            <button class="quick-view-btn" onclick="openQuickView(
+'Red Velvet Cake',
+'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800',
+'Moist red velvet sponge topped with cream cheese frosting.',
+260
+)">
+
+              Quick View
+
+            </button>
+
+            <button onclick="addItem('Red Velvet Cake',260,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="dessert">
+
+          <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05">
+
+          <h3>Blueberry Tart</h3>
+
+          <p>Buttery tart shell filled with fresh blueberry compote.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>Ready Now</span>
+            <span>300 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹240</span>
+            <button class="quick-view-btn" onclick="openQuickView(
+'Blueberry Tart',
+'https://images.unsplash.com/photo-1464306076886-da185f6a9d05?w=800',
+'Buttery tart shell filled with fresh blueberry compote.',
+240
+)">
+
+              Quick View
+
+            </button>
+
+            <button onclick="addItem('Blueberry Tart',240,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="dessert">
+
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a">
+
+          <h3>Butter Croissant</h3>
+
+          <p>Flaky French pastry baked fresh every morning.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>Ready Now</span>
+            <span>220 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹160</span>
+
+            <button onclick="addItem('Butter Croissant',160,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+        <div class="menu-card" data-category="dessert">
+
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
+
+          <h3>Chocolate Donut</h3>
+
+          <p>Soft donut coated with premium chocolate glaze.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>Ready Now</span>
+            <span>270 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹150</span>
+
+            <button onclick="addItem('Chocolate Donut',150,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card" data-category="dessert">
+          <div class="wishlist-btn">
+            ♡
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+
+          <h3>Cheesecake</h3>
+          <div class="meta-info">
+
+            <span>★★★★☆</span>
+
+            <span>⏱ 3 min</span>
+
+          </div>
+
+          <p>Classic creamy cheesecake with rich texture.</p>
+
+          <div class="price-row">
+            <span>₹250</span>
+            <button onclick="addItem('Cheesecake',250,this)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+        <div class="menu-card" data-category="coffee">
+
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+
+          <h3>Flat White</h3>
+
+          <p>Velvety microfoam combined with rich espresso shots.</p>
+
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+            <span>5 min</span>
+            <span>130 kcal</span>
+
+          </div>
+
+          <div class="price-row">
+
+            <span>₹190</span>
+
+            <button onclick="addItem('Flat White',190,this)">
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card" data-category="dessert">
+          <div class="wishlist-btn">
+            ♡
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e">
+
+          <h3>Brownie</h3>
+          <div class="meta-info">
+
+            <span>★★★★★</span>
+
+            <span>⏱ 5 min</span>
+
+          </div>
+
+          <p>Warm chocolate brownie loved by guests.</p>
+
+          <div class="price-row">
+            <span>₹180</span>
+            <button onclick="addItem('Brownie',180,this)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="recommend-section">
+
+    <div class="section-heading">
+
+      <span>HANDPICKED FOR YOU</span>
+
+      <h2>You May Also Like</h2>
+
+      <p>
+        Discover guest favorites and trending treats.
+      </p>
+
+    </div>
+
+    <div class="recommend-grid">
+
+      <div class="recommend-card">
+
+        <span class="recommend-badge">
+
+          Trending
+
+        </span>
+
+        <h3>Hazelnut Latte</h3>
+
+        <p>
+          Smooth espresso with roasted hazelnut flavor.
+        </p>
+
+        <button onclick="addItem('Hazelnut Latte',240,this)">
+
+          Add To Cart
+
+        </button>
+
+      </div>
+
+      <div class="recommend-card">
+
+        <span class="recommend-badge">
+
+          New
+
+        </span>
+
+        <h3>Blueberry Cheesecake</h3>
+
+        <p>
+          Creamy cheesecake topped with blueberries.
+        </p>
+
+        <button onclick="addItem('Blueberry Cheesecake',280,this)">
+
+          Add To Cart
+
+        </button>
+
+      </div>
+
+      <div class="recommend-card">
+
+        <span class="recommend-badge">
+
+          Popular
+
+        </span>
+
+        <h3>Chocolate Croissant</h3>
+
+        <p>
+          Freshly baked buttery croissant with chocolate.
+        </p>
+
+        <button onclick="addItem('Chocolate Croissant',190,this)">
+
+          Add To Cart
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="reservation-banner">
+
+    <span>
+      PREMIUM EXPERIENCE
+    </span>
+
+    <h2>
+      Reserve Your Table Today
+    </h2>
+
+    <p>
+
+      Enjoy handcrafted coffee,
+      fresh desserts and a cozy atmosphere
+      designed for memorable moments.
+
+    </p>
+
+    <a href="contact.html">
+
+      Book Now
+
+    </a>
+
+  </section>
+
+  <button id="topBtn">
+
+    <i class="fas fa-arrow-up"></i>
+
+  </button>
+
+  <div id="cartDrawer" class="cart-drawer">
+
+    <div class="cart-header">
+
+      <span class="drawer-label">
+        ☕ BREW HAVEN
+      </span>
+
+      <h3>Your Order</h3>
+
+      <p class="drawer-subtitle">
+        Freshly prepared for you
+      </p>
+
+      <button class="close-cart" onclick="toggleCart()">
+        &times;
+      </button>
+
+    </div>
+
+    <div id="cartItems"></div>
+    <p id="emptyCartMsg">
+
+      ☕ Your cart is waiting for
+      something delicious.
+
+    </p>
+
+    <div class="cart-footer">
+
+      <h4>
+
+        Total: ₹<span id="total">0</span>
+
+      </h4>
+
+      <button class="checkout-btn" onclick="checkout()">
+
+        Checkout
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="cartOverlay" onclick="toggleCart()"></div>
+
+  <div id="wishlistDrawer" class="wishlist-drawer">
+
+    <div class="cart-header">
+
+      <div>
+
+        <span class="drawer-label">
+
+          ❤️ FAVORITES
+
+        </span>
+
+        <h3>Your Wishlist</h3>
+
+      </div>
+
+      <button class="close-cart" onclick="toggleWishlist()">
+
+        ✕
+
+      </button>
+
+    </div>
+
+    <p id="emptyWishlistMsg">
+
+      ❤️ Save your favorite drinks here.
+
+    </p>
+
+    <div id="wishlistItems"></div>
+
+    <div class="wishlist-footer">
+
+      <button onclick="toggleWishlist()">
+
+        Continue Exploring
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="wishlistOverlay" onclick="toggleWishlist()"></div>
+
+  <div id="checkoutModal" class="checkout-modal">
+
+    <div class="checkout-box">
+
+      <h2>☕ Complete Your Order</h2>
+
+      <input type="text" placeholder="Your Name" id="customerName">
+
+      <input type="tel" placeholder="Phone Number" id="customerPhone">
+
+      <textarea placeholder="Delivery Address" id="customerAddress"></textarea>
+
+      <textarea placeholder="Special Instructions (Optional)" id="customerNote"></textarea>
+
+      <div class="checkout-actions">
+
+        <button class="cancel-btn" onclick="closeCheckout()">
+
+          Cancel
+
+        </button>
+
+        <button class="place-btn" onclick="placeOrder()">
+
+          Place Order
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div id="successModal" class="success-modal">
+
+    <div class="success-box">
+
+      <h2>🎉 Order Confirmed</h2>
+
+      <p id="orderIdText"></p>
+
+      <p>
+        Estimated Preparation Time:
+        <strong>15-20 mins</strong>
+      </p>
+
+      <button onclick="closeSuccess()">
+
+        Awesome!
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="quickViewModal" class="quick-view-modal">
+
+    <div class="quick-view-content">
+
+      <button class="close-quick-view" onclick="closeQuickView()">
+
+        ✕
+
+      </button>
+
+      <img id="quickImg">
+
+      <h2 id="quickTitle"></h2>
+
+      <p id="quickDesc"></p>
+
+      <h3 id="quickPrice"></h3>
+
+      <button id="quickAddBtn">
+
+        Add To Cart
+
+      </button>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SQROCK_CAFE_WEBSITE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="scrollProgress"></div>
+
+  <header class="nav">
+
+    <div class="logo">
+      Brew Haven
+    </div>
+
+    <nav id="navMenu">
+
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <div class="nav-right">
+
+      <div class="cart-btn" onclick="toggleCart()">
+
+        🛒 <span id="cartCount">0</span>
+
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+  </header>
+  <section class="hero">
+
+    <span class="hero-tag">
+      PREMIUM ARTISAN CAFE
+    </span>
+
+    <h1>
+      Crafting Moments,<br>
+      One Cup at a Time
+    </h1>
+
+    <p>Premium café with slow living philosophy</p>
+
+    <div class="hero-buttons">
+
+      <a href="menu.html" class="btn-primary">
+        Explore Menu
+      </a>
+
+      <a href="contact.html" class="btn-secondary">
+        Reserve Table
+      </a>
+
+    </div>
+
+    <div class="hero-stats">
+
+      <div>
+        <h3 class="counter" data-target="20">
+          0
+        </h3>
+        <span>Signature Drinks</span>
+      </div>
+
+      <div>
+        <h3 class="counter" data-target="10000">
+          0
+        </h3>
+        <span>Happy Guests</span>
+      </div>
+
+      <div>
+        <h3 class="counter" data-target="4.9">
+          0
+        </h3>
+        <span>Customer Rating</span>
+      </div>
+
+    </div>
+
+  </section>
+  <section class="story-section reveal">
+
+    <div class="story-image">
+
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24" alt="Cafe Interior">
+
+    </div>
+
+    <div class="story-content">
+
+      <span class="story-tag">
+        SINCE 2018
+      </span>
+
+      <h2>
+        More Than Just Coffee
+      </h2>
+
+      <p>
+        At Brew Haven, every cup tells a story.
+        We source premium beans, craft every drink
+        with care, and create a space where people
+        connect, work, and unwind.
+      </p>
+
+      <p>
+        From handcrafted espresso to freshly baked
+        desserts, our mission is to deliver an
+        unforgettable café experience every day.
+      </p>
+
+      <a href="about.html" class="story-btn">
+        Discover Our Story
+      </a>
+
+    </div>
+    <section class="story-section reveal"></section>
+
+  </section>
+  <section class="featured-drinks reveal">
+
+    <div class="section-heading">
+
+      <span>OUR BESTSELLERS</span>
+
+      <h2>Signature Creations</h2>
+
+      <p>
+        Crafted with premium beans and perfected by our baristas.
+      </p>
+
+    </div>
+
+    <div class="featured-grid">
+
+      <div class="featured-card">
+
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+
+        <div class="featured-content">
+
+          <span class="drink-badge">
+            Bestseller
+          </span>
+
+          <h3>Caramel Latte</h3>
+
+          <p>
+            Smooth espresso with rich caramel notes.
+          </p>
+
+          <div class="drink-footer">
+
+            <span>₹220</span>
+
+            <a href="menu.html">
+              Order →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="featured-card">
+
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+
+        <div class="featured-content">
+
+          <span class="drink-badge">
+            Popular
+          </span>
+
+          <h3>Cold Brew</h3>
+
+          <p>
+            Slow-steeped coffee served chilled.
+          </p>
+
+          <div class="drink-footer">
+
+            <span>₹180</span>
+
+            <a href="menu.html">
+              Order →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="featured-card">
+
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+
+        <div class="featured-content">
+
+          <span class="drink-badge">
+            Chef's Choice
+          </span>
+
+          <h3>Mocha Delight</h3>
+
+          <p>
+            Chocolate infused premium coffee.
+          </p>
+
+          <div class="drink-footer">
+
+            <span>₹250</span>
+
+            <a href="menu.html">
+              Order →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section class="testimonials">
+
+    <div class="section-heading">
+
+      <span>WHAT OUR GUESTS SAY</span>
+
+      <h2>Loved By Coffee Enthusiasts</h2>
+
+      <p>
+        Thousands of guests have made Brew Haven
+        their favorite coffee destination.
+      </p>
+
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          The ambience is incredible and the
+          caramel latte is the best I've ever had.
+        </p>
+
+        <h4>Sarah Johnson</h4>
+
+        <span>Regular Customer</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          Perfect place to work remotely.
+          Great coffee and amazing service.
+        </p>
+
+        <h4>Michael Brown</h4>
+
+        <span>Freelancer</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          Every visit feels special.
+          Their desserts are outstanding.
+        </p>
+
+        <h4>Emma Wilson</h4>
+
+        <span>Food Blogger</span>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section class="experience-section">
+
+    <div class="experience-content">
+
+      <span class="experience-tag">
+        THE BREW HAVEN EXPERIENCE
+      </span>
+
+      <h2>
+        More Than A Café
+      </h2>
+
+      <p>
+        Whether you're meeting friends, working remotely,
+        or simply enjoying a peaceful coffee break,
+        Brew Haven offers an atmosphere designed to inspire.
+      </p>
+
+      <div class="experience-features">
+
+        <div class="feature-box">
+          <span>☕</span>
+          <h4>Handcrafted Coffee</h4>
+          <p>Made fresh by expert baristas.</p>
+        </div>
+
+        <div class="feature-box">
+          <span>🥐</span>
+          <h4>Fresh Bakery</h4>
+          <p>Baked daily using premium ingredients.</p>
+        </div>
+
+        <div class="feature-box">
+          <span>💻</span>
+          <h4>Work Friendly</h4>
+          <p>Fast WiFi and cozy seating.</p>
+        </div>
+
+        <div class="feature-box">
+          <span>🎵</span>
+          <h4>Live Events</h4>
+          <p>Music nights and community gatherings.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="experience-image">
+
+      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8" alt="Cafe Experience">
+
+    </div>
+
+  </section>
+  <section class="reservation-cta">
+
+    <div class="reservation-overlay">
+
+      <span>RESERVE YOUR TABLE</span>
+
+      <h2>
+        Experience Exceptional Coffee & Comfort
+      </h2>
+
+      <p>
+        Book your table today and enjoy handcrafted
+        beverages, fresh bakery delights and a cozy atmosphere.
+      </p>
+
+      <div class="reservation-buttons">
+
+        <a href="contact.html" class="reserve-btn">
+          Reserve Now
+        </a>
+
+        <a href="menu.html" class="menu-btn">
+          View Menu
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+  <footer class="footer" reveal>
+
+    <div class="footer-container">
+
+      <div class="footer-column">
+
+        <h2 class="footer-logo">
+          ☕ Brew Haven
+        </h2>
+
+        <p>
+          Crafting memorable coffee experiences
+          since 2018.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="menu.html">Menu</a></li>
+
+          <li><a href="gallery.html">Gallery</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Opening Hours</h3>
+
+        <ul>
+
+          <li>Mon - Fri : 8 AM - 10 PM</li>
+
+          <li>Saturday : 9 AM - 11 PM</li>
+
+          <li>Sunday : 9 AM - 9 PM</li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Contact</h3>
+
+        <ul>
+
+          <li>📍 Brew Haven Café</li>
+
+          <li>📞 +91 98765 43210</li>
+
+          <li>✉ hello@brewhaven.com</li>
+
+        </ul>
+
+        <div class="social-links">
+
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="newsletter">
+
+      <input type="email" placeholder="Your Email">
+
+      <button>
+        Subscribe
+      </button>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2025 Brew Haven. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div id="cartDrawer" class="cart-drawer">
+
+    <div class="cart-header">
+
+      <h3>Your Order</h3>
+
+      <button class="close-cart" onclick="toggleCart()">
+        &times;
+      </button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <h4>Total: ₹<span id="total">0</span></h4>
+
+    <button class="checkout-btn" onclick="checkout()">
+      Checkout
+    </button>
+
+  </div>
+
+  <div id="cartOverlay" onclick="toggleCart()"></div>
+
+  <script defer src="script.js"></script>
+  <a href="https://wa.me/8828549661" class="whatsapp-btn" target="_blank">
+
+    <i class="fab fa-whatsapp"></i>
+
+  </a>
+  <button id="topBtn">
+
+    <i class="fas fa-arrow-up"></i>
+
+  </button>
+
+</body>
+
+</html>

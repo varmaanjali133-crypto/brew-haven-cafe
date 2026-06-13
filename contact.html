@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <header class="nav">
+
+    <div class="logo">
+      Brew Haven
+    </div>
+
+    <nav id="navMenu">
+
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <div class="nav-right">
+
+      <div class="cart-btn" onclick="toggleCart()">
+
+        🛒 <span id="cartCount">0</span>
+
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <section class="page">
+    <section class="contact-section">
+
+      <!-- LEFT SIDE -->
+      <div class="contact-left">
+
+        <p class="contact-tag">Get In Touch</p>
+
+        <h1>
+          We'd love to <br>
+          <span>hear from you!</span>
+        </h1>
+
+        <p class="contact-desc">
+          Have a question, suggestion, or want to reserve a table?
+          Fill out the form and we'll get back to you soon.
+        </p>
+
+        <div class="contact-info">
+
+          <div class="info-box">
+            <i class="fa-solid fa-phone"></i>
+            +91 88285 49661
+          </div>
+
+          <div class="info-box">
+            <i class="fa-solid fa-envelope"></i>
+            contact@brewhaven.com
+          </div>
+
+          <div class="info-box">
+            <i class="fa-solid fa-location-dot"></i>
+            Dombivli, Maharashtra, India
+          </div>
+
+          <div class="info-box">
+            <i class="fa-regular fa-clock"></i>
+            Mon - Sun : 8:00 AM - 11:00 PM
+          </div>
+        </div>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="contact-right">
+
+        <h2>Let's Talk 😊</h2>
+        <div class="response-time">
+          ⚡ Average response time: Under 24 Hours
+        </div>
+
+        <p>
+          Whether you're planning a coffee date,
+          hosting an event, or simply want to know
+          more about Brew Haven, we're here to help.
+        </p>
+
+        <form id="contactForm">
+
+          <label>Full Name</label>
+          <input type="text" placeholder="Your Full Name" required>
+
+          <label>Email Address</label>
+          <input type="email" placeholder="Your Email" required>
+
+          <label>Your Message</label>
+          <textarea placeholder="Share your thoughts..." required></textarea>
+
+          <button type="submit">
+            Send Message ✉
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <section class="map-section">
+
+      <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="450" style="border:0;"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+
+    </section>
+
+    <footer class="footer">
+
+      <h3>Brew Haven</h3>
+
+      <p>
+        Crafted Coffee • Premium Experience • Slow Living
+      </p>
+
+      <p>
+        © 2026 Brew Haven. All Rights Reserved.
+      </p>
+
+      <p>
+        Designed by Anjali Varma
+      </p>
+
+    </footer>
+
+    <div class="success-toast" id="successToast">
+      Message Sent Successfully 🚀
+    </div>
+    <button id="topBtn">
+
+      <i class="fas fa-arrow-up"></i>
+
+    </button>
+    <div id="cartDrawer" class="cart-drawer">
+
+      <div class="cart-header">
+
+        <h3>Your Order</h3>
+
+        <button class="close-cart" onclick="toggleCart()">
+          &times;
+        </button>
+
+      </div>
+
+      <div id="cartItems"></div>
+
+      <h4>Total: ₹<span id="total">0</span></h4>
+
+      <button class="checkout-btn" onclick="checkout()">
+        Checkout
+      </button>
+
+    </div>
+
+    <div id="cartOverlay" onclick="toggleCart()"></div>
+
+</body>
+
+</html>
